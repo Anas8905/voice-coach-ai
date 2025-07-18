@@ -15,10 +15,10 @@ const Index = () => {
             <div className="flex items-center">
               <Link to="/" className="flex items-center space-x-2">
                 <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center">
-                  <span className="text-white font-bold">DK</span>
+                  <span className="text-white font-bold">AC</span>
                 </div>
                 <span className="text-xl font-bold text-black dark:text-white">
-                  Daniel Klukan
+                  AssistAi Coach
                 </span>
               </Link>
             </div>
@@ -179,14 +179,14 @@ const Index = () => {
             <div className="flex justify-center md:justify-start">
               <Link to="/" className="flex items-center space-x-2">
                 <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center">
-                  <span className="text-white font-bold">DK</span>
+                  <span className="text-white font-bold">AC</span>
                 </div>
-                <span className="text-xl font-bold">Daniel Klukan</span>
+                <span className="text-xl font-bold">AssistAi Coach</span>
               </Link>
             </div>
             <div className="mt-8 md:mt-0">
               <p className="text-center md:text-right text-base text-gray-500 dark:text-gray-400">
-                &copy; {new Date().getFullYear()} Daniel Klukan. All rights reserved.
+                &copy; {new Date().getFullYear()} AssistAi Coach. All rights reserved.
               </p>
             </div>
           </div>
