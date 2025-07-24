@@ -59,7 +59,7 @@ export function ClientLayout({ children }: ClientLayoutProps) {
           ))}
         </nav>
         
-        <div className="p-4 border-t mt-auto">
+        {/* <div className="p-2 border-t mt-auto">
           <div className="flex items-center justify-between">
             <ThemeToggle />
             <Button variant="ghost" size="sm" className="text-red-500">
@@ -67,12 +67,12 @@ export function ClientLayout({ children }: ClientLayoutProps) {
               Logout
             </Button>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Mobile header */}
       <div className="flex-1 flex flex-col">
-        <header className="bg-white dark:bg-gray-900 border-b p-4">
+        <header className="bg-white dark:bg-gray-900 border-b p-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Button 

@@ -1,7 +1,8 @@
-
+// src/pages/Index.jsx
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import ScrollingFeatures from '../components/ui/features-scroll';
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { MessageCircle, ArrowRight, Globe, Upload, CreditCard } from "lucide-react";
 
@@ -12,15 +13,35 @@ const Index = () => {
       <nav className="border-b bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
-            <div className="flex items-center">
+            <div className="flex items-center space-x-8">
               <Link to="/" className="flex items-center space-x-2">
                 <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center">
-                  <span className="text-white font-bold">DK</span>
+                  <span className="text-white font-bold">AC</span>
                 </div>
                 <span className="text-xl font-bold text-black dark:text-white">
-                  Daniel Klukan
+                  AssistAi Coach
                 </span>
               </Link>
+              <div className="hidden md:flex space-x-6">
+                <Link
+                  to="/features"
+                  className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white"
+                >
+                  Features
+                </Link>
+                <Link
+                  to="/pricing"
+                  className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white"
+                >
+                  Pricing
+                </Link>
+                <Link
+                  to="/docs"
+                  className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white"
+                >
+                  Docs
+                </Link>
+              </div>
             </div>
             <div className="flex items-center space-x-4">
               <ThemeToggle />
@@ -28,7 +49,7 @@ const Index = () => {
                 <Button variant="outline">Login</Button>
               </Link>
               <Link to="/register">
-                <Button>Join Now</Button>
+                <Button>Sign Up</Button>
               </Link>
             </div>
           </div>
@@ -43,128 +64,133 @@ const Index = () => {
           <div className="text-center lg:text-left lg:grid lg:grid-cols-2 lg:gap-8 items-center">
             <div className="animate-fade-in">
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Elevate Your Mindset. Amplify Your Potential.
+                Turn Your Coaching Content into Instant, Data-Driven Answers
               </h1>
               <p className="mt-4 text-xl text-gray-600 dark:text-gray-300">
-                I help high-performers unlock clarity, confidence, and strategic growth through personalized coaching.
+                Upload your playbooks, session notes, and resources—our AI uses your data to answer every client question immediately.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link to="/register">
                   <Button size="lg" className="w-full sm:w-auto">
-                    Work With Me <ArrowRight className="ml-2 h-4 w-4" />
+                    Get Started Free <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
                 <Link to="/ai-coach">
                   <Button variant="outline" size="lg" className="w-full sm:w-auto">
-                    Try AI Demo <MessageCircle className="ml-2 h-4 w-4" />
+                    See It in Action <MessageCircle className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
               </div>
             </div>
 
             <div className="mt-12 lg:mt-0 relative animate-fade-in">
-              <div className="aspect-w-5 aspect-h-3 rounded-lg overflow-hidden shadow-xl">
+                <div className="aspect-w-5 aspect-h-3 rounded-lg overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  src="/poster.svg"
                   alt="Coaching session"
                   className="w-full h-full object-cover"
                 />
-              </div>
+                </div>
             </div>
           </div>
         </div>
       </div>
+
+
+      <ScrollingFeatures />
+
+      
 
       {/* Features */}
       <div className="py-12 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-              How I Help You Grow
+              How It Works
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500 dark:text-gray-400">
-              Everything I offer is designed to transform how you think, act, and lead.
+              Everything you need to provide fast, accurate support—powered by your unique coaching knowledge.
+              Turn your experience into an always-on assistant that works 24/7 for your clients.
             </p>
           </div>
 
-          <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {/* Feature 1 */}
-            <Card className="transition-all hover:shadow-lg">
-              <CardContent className="pt-6">
-                <div className="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-4">
-                  <Upload className="h-6 w-6 text-black dark:text-white" />
-                </div>
-                <h3 className="text-lg font-medium text-gray-900 dark:text-white">
-                  Deep-Dive Sessions
-                </h3>
-                <p className="mt-2 text-gray-500 dark:text-gray-400">
-                  Personalized 1-on-1 coaching tailored to your goals, habits, and challenges.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="mt-20">
+  <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
+    Powerful Features for Coaches
+  </h2>
 
-            {/* Feature 2 */}
-            <Card className="transition-all hover:shadow-lg">
-              <CardContent className="pt-6">
-                <div className="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-4">
-                  <MessageCircle className="h-6 w-6 text-black dark:text-white" />
-                </div>
-                <h3 className="text-lg font-medium text-gray-900 dark:text-white">
-                  AI-Powered Practice
-                </h3>
-                <p className="mt-2 text-gray-500 dark:text-gray-400">
-                  Train with an AI coach that reflects my style, so you grow even between sessions.
-                </p>
-              </CardContent>
-            </Card>
+  <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+    {/* Feature 1 */}
+    <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm hover:shadow-lg transition duration-300">
+      <div className="w-12 h-12 rounded-full bg-indigo-50 dark:bg-indigo-900 flex items-center justify-center mb-4">
+        <Upload className="h-6 w-6 text-indigo-600 dark:text-indigo-300" />
+      </div>
+      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+        Data-Driven Uploads
+      </h3>
+      <p className="text-sm text-gray-600 dark:text-gray-400">
+        Drag & drop your docs, templates, and transcripts—no setup fuss.
+      </p>
+    </div>
 
-            {/* Feature 3 */}
-            <Card className="transition-all hover:shadow-lg">
-              <CardContent className="pt-6">
-                <div className="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-4">
-                  <Globe className="h-6 w-6 text-black dark:text-white" />
-                </div>
-                <h3 className="text-lg font-medium text-gray-900 dark:text-white">
-                  Global Access
-                </h3>
-                <p className="mt-2 text-gray-500 dark:text-gray-400">
-                  Work with me from anywhere in the world—virtually or in-person, your growth continues.
-                </p>
-              </CardContent>
-            </Card>
+    {/* Feature 2 */}
+    <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm hover:shadow-lg transition duration-300">
+      <div className="w-12 h-12 rounded-full bg-indigo-50 dark:bg-indigo-900 flex items-center justify-center mb-4">
+        <MessageCircle className="h-6 w-6 text-indigo-600 dark:text-indigo-300" />
+      </div>
+      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+        Instant, Contextual Answers
+      </h3>
+      <p className="text-sm text-gray-600 dark:text-gray-400">
+        AI answers your clients using only your content—100% secure.
+      </p>
+    </div>
 
-            {/* Feature 4 */}
-            <Card className="transition-all hover:shadow-lg">
-              <CardContent className="pt-6">
-                <div className="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-4">
-                  <CreditCard className="h-6 w-6 text-black dark:text-white" />
-                </div>
-                <h3 className="text-lg font-medium text-gray-900 dark:text-white">
-                  Flexible Plans
-                </h3>
-                <p className="mt-2 text-gray-500 dark:text-gray-400">
-                  Choose from monthly plans, intensives, or a single session based on your journey.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+    {/* Feature 3 */}
+    <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm hover:shadow-lg transition duration-300">
+      <div className="w-12 h-12 rounded-full bg-indigo-50 dark:bg-indigo-900 flex items-center justify-center mb-4">
+        <Globe className="h-6 w-6 text-indigo-600 dark:text-indigo-300" />
+      </div>
+      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+        Flexible Integrations
+      </h3>
+      <p className="text-sm text-gray-600 dark:text-gray-400">
+        Connect to Slack, email, or your coaching portal via API.
+      </p>
+    </div>
+
+    {/* Feature 4 */}
+    <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm hover:shadow-lg transition duration-300">
+      <div className="w-12 h-12 rounded-full bg-indigo-50 dark:bg-indigo-900 flex items-center justify-center mb-4">
+        <CreditCard className="h-6 w-6 text-indigo-600 dark:text-indigo-300" />
+      </div>
+      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+        Scalable Client Support
+      </h3>
+      <p className="text-sm text-gray-600 dark:text-gray-400">
+        Automate FAQs and prep clients between sessions—effortlessly.
+      </p>
+    </div>
+  </div>
+</div>
+
         </div>
       </div>
 
-      {/* CTA */}
+      {/* Bottom CTA */}
       <div className="bg-black dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
           <div className="text-center">
             <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-              Let's build the best version of you.
+              Ready to Empower Your Clients with AI?
             </h2>
             <p className="mt-4 text-xl text-gray-300">
-              Book your first session and begin transforming today.
+              Start your free trial today and see AI in action with your data.
             </p>
             <div className="mt-8">
               <Link to="/register">
                 <Button size="lg" variant="secondary" className="px-8">
-                  Book a Session
+                  Start Your Free Trial
                 </Button>
               </Link>
             </div>
@@ -175,20 +201,37 @@ const Index = () => {
       {/* Footer */}
       <footer className="bg-white dark:bg-gray-900 border-t">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-          <div className="md:flex md:items-center md:justify-between">
+          <div className="md:flex md:items-center md:justify-between space-y-6 md:space-y-0">
             <div className="flex justify-center md:justify-start">
               <Link to="/" className="flex items-center space-x-2">
                 <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center">
-                  <span className="text-white font-bold">DK</span>
+                  <span className="text-white font-bold">AC</span>
                 </div>
-                <span className="text-xl font-bold">Daniel Klukan</span>
+                <span className="text-xl font-bold text-black dark:text-white">
+                  AssistAi Coach
+                </span>
               </Link>
             </div>
-            <div className="mt-8 md:mt-0">
-              <p className="text-center md:text-right text-base text-gray-500 dark:text-gray-400">
-                &copy; {new Date().getFullYear()} Daniel Klukan. All rights reserved.
-              </p>
+            <div className="flex space-x-6 justify-center md:justify-end">
+              <Link to="/features" className="text-gray-500 hover:text-gray-900">
+                Features
+              </Link>
+              <Link to="/pricing" className="text-gray-500 hover:text-gray-900">
+                Pricing
+              </Link>
+              <Link to="/docs" className="text-gray-500 hover:text-gray-900">
+                Docs
+              </Link>
+              <Link to="/privacy" className="text-gray-500 hover:text-gray-900">
+                Privacy
+              </Link>
+              <Link to="/terms" className="text-gray-500 hover:text-gray-900">
+                Terms
+              </Link>
             </div>
+            <p className="text-center md:text-right text-base text-gray-500 dark:text-gray-400">
+              &copy; {new Date().getFullYear()} AssistAi Coach. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
