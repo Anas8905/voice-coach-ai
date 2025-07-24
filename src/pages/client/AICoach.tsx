@@ -115,7 +115,7 @@ const AICoach = () => {
 
   return (
     <ClientLayout>
-      <div className="flex flex-col h-[calc(100vh-4rem)] md:h-[calc(100vh-1rem)] overflow-hidden">
+      <div className="flex flex-col h-[calc(100vh-4rem)] md:h-[calc(100vh-7rem)] overflow-hidden">
         <div className="flex items-center justify-between mb-4">
           <h1 className="text-2xl font-bold">AI Coach</h1>
           

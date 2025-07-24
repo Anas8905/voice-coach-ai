@@ -5,6 +5,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { Check, CreditCard } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
+import { HiChevronDown, HiChevronUp } from "react-icons/hi";
+
 
 interface Plan {
   id: string;
@@ -26,7 +28,9 @@ const plans: Plan[] = [
       "5 coaching sessions per month",
       "English language only",
       "Text-based conversations",
-      "Access to basic coaching templates"
+      "Access to basic coaching templates",
+      "Whatsapp integration",
+      "Email support"
     ]
   },
   {
@@ -61,6 +65,24 @@ const plans: Plan[] = [
   }
 ];
 
+const faqs = [
+  {
+    question: "Can I cancel my subscription?",
+    answer:
+      "Yes, you can cancel your subscription at any time. You'll continue to have access until the end of your billing period.",
+  },
+  {
+    question: "How do I change my plan?",
+    answer:
+      "You can upgrade or downgrade your plan at any time. Changes will take effect at the start of your next billing cycle.",
+  },
+  {
+    question: "Is there a free trial?",
+    answer:
+      "Yes, all plans come with a 7-day free trial. You won't be charged until the trial period ends.",
+  },
+];
+
 const SubscriptionPlans = () => {
   const [isLoading, setIsLoading] = useState<Record<string, boolean>>({});
 
@@ -87,6 +109,28 @@ const SubscriptionPlans = () => {
       }
     }, 1000);
   };
+
+  const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
+    const [open, setOpen] = useState(false);
+  
+    return (
+      <div className="border-b border-gray-200 py-4">
+        <button
+          onClick={() => setOpen(!open)}
+          className="w-full flex justify-between items-center text-left focus:outline-none"
+        >
+          <h4 className="text-sm font-medium text-gray-800">{question}</h4>
+          {open ? <HiChevronUp className="w-4 h-4 text-gray-500" /> : <HiChevronDown className="w-4 h-4 text-gray-500" />}
+        </button>
+        {open && (
+          <p className="mt-2 text-sm text-gray-600 transition-all duration-200">
+            {answer}
+          </p>
+        )}
+      </div>
+    );
+  };
+  
 
   return (
     <ClientLayout>
@@ -161,29 +205,15 @@ const SubscriptionPlans = () => {
           ))}
         </div>
         
-        <div className="bg-muted rounded-lg p-4 mt-8">
-          <h3 className="font-medium">Subscription FAQs</h3>
-          <div className="mt-4 space-y-4">
-            <div>
-              <h4 className="font-medium text-sm">Can I cancel my subscription?</h4>
-              <p className="text-sm text-muted-foreground mt-1">
-                Yes, you can cancel your subscription at any time. You'll continue to have access until the end of your billing period.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium text-sm">How do I change my plan?</h4>
-              <p className="text-sm text-muted-foreground mt-1">
-                You can upgrade or downgrade your plan at any time. Changes will take effect at the start of your next billing cycle.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium text-sm">Is there a free trial?</h4>
-              <p className="text-sm text-muted-foreground mt-1">
-                Yes, all plans come with a 7-day free trial. You won't be charged until the trial period ends.
-              </p>
-            </div>
+        <div className="bg-white border border-gray-200 rounded-xl p-6 mt-10 shadow-sm">
+          <h3 className="text-lg font-semibold text-gray-900">Subscription FAQs</h3>
+          <div className="mt-4">
+            {faqs.map((faq, idx) => (
+              <FAQItem key={idx} question={faq.question} answer={faq.answer} />
+            ))}
           </div>
         </div>
+
       </div>
     </ClientLayout>
   );
