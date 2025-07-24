@@ -228,6 +228,13 @@ const Index = () => {
               <Link to="/terms" className="text-gray-500 hover:text-gray-900">
                 Terms
               </Link>
+                <span className="text-xl font-bold">AssistAi Coach</span>
+              </Link>
+            </div>
+            <div className="mt-8 md:mt-0">
+              <p className="text-center md:text-right text-base text-gray-500 dark:text-gray-400">
+                &copy; {new Date().getFullYear()} AssistAi Coach. All rights reserved.
+              </p>
             </div>
             <p className="text-center md:text-right text-base text-gray-500 dark:text-gray-400">
               &copy; {new Date().getFullYear()} AssistAi Coach. All rights reserved.
